@@ -4,7 +4,6 @@ import {Preloader} from "./Preloader";
 import {Cart} from "./Cart";
 import GoodsList from "./GoodsList";
 import {BasketList} from "./BasketList"
-import {CountButton} from "./CountButton";
 import {Alert} from "./Alert";
 
 export default function Shop() {
