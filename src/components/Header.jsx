@@ -1,7 +1,7 @@
 import React from "react";
 
 function Header() {
-    const url = "https://github.com/anykeyguru/react-movies";
+    const url = "https://github.com/anykeyguru/react-shop-demo";
     return (
         <nav className="indigo darken-3">
             <div className="nav-wrapper">
