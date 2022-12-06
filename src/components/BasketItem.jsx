@@ -1,14 +1,17 @@
-import React from "react";
+import React, {useContext} from "react";
+import {ShopContext} from "../contexts/context";
 
 function BasketItem(props) {
+    const {
+        removeFromeBasket,
+        incrQuantity,
+        decrQuantity
+    } = useContext(ShopContext);
     const {
         mainId,
         displayName,
         price,
         quantity,
-        remFromBasket = Function.prototype,
-        incrQuantity = Function.prototype,
-        decrQuantity = Function.prototype
     } = props
     return <li className="collection-item flow-text">
         {displayName} with {price} x  {quantity} = {price * quantity} sum
@@ -16,7 +19,7 @@ function BasketItem(props) {
             <i className="material-icons " onClick={() => decrQuantity(mainId)}>first_page</i>
             <span className="btn-basket-count-digit"> {quantity} </span>
             <i className="material-icons " onClick={() => incrQuantity(mainId)}>last_page</i> { '  ' }
-            <i onClick={() => remFromBasket(mainId)}
+            <i onClick={() => removeFromeBasket(mainId)}
                style={{cursor: "pointer"}}
                className="material-icons">
                 remove_shopping_cart

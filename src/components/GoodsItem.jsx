@@ -1,13 +1,15 @@
-import React from "react";
+import React, {useContext} from "react";
+import {ShopContext} from "../contexts/context";
+
 
 function GoodsItem(props) {
+    const {addToBasket} = useContext(ShopContext);
     const {
         mainId,
         displayName,
         displayDescription,
         price = {},
         displayAssets = [],
-        addToBasket = Function.prototype
     } = props;
     const image = displayAssets[0].background
 
