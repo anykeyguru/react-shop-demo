@@ -1,3 +1,3 @@
 # React Shop app
 
-This project was bootstrapped with [React Shop](https://anykeyguru.github.io/react-shop-demo).
+This project You can see at link [React Shop](https://anykeyguru.github.io/react-shop-demo).
