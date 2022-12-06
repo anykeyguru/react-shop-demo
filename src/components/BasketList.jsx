@@ -1,18 +1,17 @@
 import {BasketItem} from "./BasketItem";
-import React from "react";
+import React, {useContext} from "react";
+import {ShopContext} from "../contexts/context";
 
-function BasketList(props) {
+function BasketList() {
     const {
         orders,
-        handleBasketShow = Function.prototype,
-        remFromBasket = Function.prototype,
-        incrQuantity=Function.prototype,
-        decrQuantity=Function.prototype
-    } = props
+        handleBasketShow,
+    } = useContext(ShopContext);
+
     const totalPrice = orders.reduce((sum, el) => {
         return sum + el.price * el.quantity;
     }, 0)
-    return <div className="basket-modal" onClick={handleBasketShow}>
+    return <div className="basket-modal scrollspy">
         <ul className="collection basket-list">
             <li className="collection-item active purple darken-2">Корзина <span className="secondary-content">
             <i onClick={handleBasketShow} className="material-icons basket-close">close</i></span></li>
@@ -21,9 +20,6 @@ function BasketList(props) {
                     <BasketItem
                         key={order.mainId + "sd"}
                         {...order}
-                        remFromBasket={remFromBasket}
-                        incrQuantity={incrQuantity}
-                        decrQuantity={decrQuantity}
                     />
                 )) : <li className="collection-item">Basket is empty.</li>
             }
